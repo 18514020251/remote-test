@@ -15,6 +15,10 @@ document.querySelector('.btn').addEventListener('click', () => {
     myAlert(false, '手机号格式不正确')
     return
   }
+  if (data.code.length !== 6) {
+    myAlert(false, '验证码格式不正确')
+    return
+  }
   // 1.3 基于 axios 调用验证码登录接口
   axios({
     url: '/v1_0/authorizations',
